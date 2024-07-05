@@ -9,6 +9,8 @@
 		<Company />
 		<PackageId>CoreProjectLib</PackageId>
 		<Product>CoreProjectLib</Product>
+		<Version>1.0.1</Version>
+		<PackageProjectUrl>https://github.com/niyozbekmirzayev/CoreProjectLib</PackageProjectUrl>
 	</PropertyGroup>
 	
   <ItemGroup>
