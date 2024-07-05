@@ -1,8 +1,8 @@
-﻿using Core.Models;
+﻿using CoreProjectLib.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Core.Data.Repositories
+namespace CoreProjectLib.Data.Repositories
 {
     public interface IBaseRepository<TEntity, TDbContext> : IDisposable
         where TEntity : BaseEntity

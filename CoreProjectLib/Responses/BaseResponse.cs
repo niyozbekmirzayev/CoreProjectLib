@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Responses
+namespace CoreProjectLib.Responses
 {
     public class BaseResponse<T>
     {

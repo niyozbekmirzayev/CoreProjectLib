@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Exceptions.ExceptionTypes
+namespace CoreProjectLib.Exceptions.ExceptionTypes
 {
     public class BusinessLogicException : Exception
     {

@@ -1,8 +1,8 @@
-﻿using Base.Exceptions;
-using Core.Exceptions.ExceptionTypes;
+﻿using CoreProjectLib.Exceptions;
+using CoreProjectLib.Exceptions.ExceptionTypes;
 using Microsoft.AspNetCore.Http;
 
-namespace Core.Middlewares
+namespace CoreProjectLib.Middlewares
 {
     public class GlobalExceptionHandlerMiddleware
     {

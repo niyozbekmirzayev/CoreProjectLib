@@ -1,11 +1,11 @@
-﻿using Core.Data;
+﻿using CoreProjectLib.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Core.Extensions
+namespace CoreProjectLib.Extensions
 {
     public static class DatabaseMigrationExtensions
     {

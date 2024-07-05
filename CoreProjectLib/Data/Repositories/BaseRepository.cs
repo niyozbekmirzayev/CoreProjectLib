@@ -1,8 +1,8 @@
-﻿using Core.Models;
+﻿using CoreProjectLib.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Core.Data.Repositories
+namespace CoreProjectLib.Data.Repositories
 {
     public abstract class BaseRepository<TEntity, TDbContext> : IBaseRepository<TEntity, TDbContext>
             where TEntity : BaseEntity

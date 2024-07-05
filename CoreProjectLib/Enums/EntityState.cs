@@ -1,5 +1,5 @@
 ﻿
-namespace Core.Enums
+namespace CoreProjectLib.Enums
 {
     public enum EntityState
     {

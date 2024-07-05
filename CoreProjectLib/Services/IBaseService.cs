@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Core.Services
+namespace CoreProjectLib.Services
 {
     public interface IBaseService<TService>
     {

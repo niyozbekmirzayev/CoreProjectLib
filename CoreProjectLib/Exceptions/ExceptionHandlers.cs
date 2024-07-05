@@ -1,9 +1,9 @@
-﻿using Core.Exceptions.ExceptionTypes;
-using Core.Responses;
+﻿using CoreProjectLib.Exceptions.ExceptionTypes;
+using CoreProjectLib.Responses;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Base.Exceptions
+namespace CoreProjectLib.Exceptions
 {
     public static class ExceptionHandlers
     {

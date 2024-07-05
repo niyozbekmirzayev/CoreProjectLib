@@ -1,9 +1,9 @@
-﻿using Core.Models;
+﻿using CoreProjectLib.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Reflection;
 
-namespace Core.Data
+namespace CoreProjectLib.Data
 {
     public class BaseDbContext : DbContext
     {

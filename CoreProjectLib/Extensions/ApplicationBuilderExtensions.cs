@@ -1,7 +1,7 @@
-﻿using Core.Middlewares;
+﻿using CoreProjectLib.Middlewares;
 using Microsoft.AspNetCore.Builder;
 
-namespace Core.Extensions
+namespace CoreProjectLib.Extensions
 {
     public static class ApplicationBuilderExtensions
     {

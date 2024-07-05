@@ -1,8 +1,7 @@
-﻿
-using Core.Enums;
+﻿using CoreProjectLib.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models
+namespace CoreProjectLib.Models
 {
     public abstract class PersistentEntity : BaseEntity
     {
