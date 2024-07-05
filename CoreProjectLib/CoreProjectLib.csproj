@@ -1,10 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<TargetFramework>net8.0</TargetFramework>
+		<Title>CoreProjectLib</Title>
+		<Description>Provides base classes for DbContext, repositories, entities and more</Description>
+		<Authors>Niyozbek Mirzayev</Authors>
+		<Company />
+		<PackageId>CoreProjectLib</PackageId>
+		<Product>CoreProjectLib</Product>
+	</PropertyGroup>
 	
   <ItemGroup>
 	    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.34" />
