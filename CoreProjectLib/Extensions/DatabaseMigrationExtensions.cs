@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace CoreProjectLib.Extensions
 {
@@ -17,25 +18,33 @@ namespace CoreProjectLib.Extensions
 
         private static void MigrateDatabase<TDbContext>(IServiceScope serviceScope) where TDbContext : BaseDbContext
         {
-            TDbContext dbContext = serviceScope.ServiceProvider.GetRequiredService<TDbContext>();
-            IConfiguration configuration = serviceScope.ServiceProvider.GetRequiredService<IConfiguration>();
+            try
+            {
+                TDbContext dbContext = serviceScope.ServiceProvider.GetRequiredService<TDbContext>();
+                IConfiguration configuration = serviceScope.ServiceProvider.GetRequiredService<IConfiguration>();
 
-            bool doesDatabaseExist = dbContext.Database.GetService<IRelationalDatabaseCreator>().Exists();
-            if (!doesDatabaseExist)
-            {
-                Console.WriteLine("Database is creating...");
-                dbContext.Database.Migrate();
-                Console.WriteLine("Database is created.");
+                bool doesDatabaseExist = dbContext.Database.GetService<IRelationalDatabaseCreator>().Exists();
+                if (!doesDatabaseExist)
+                {
+                    Log.Information("Database is creating...");
+                    dbContext.Database.Migrate();
+                    Log.Information("Database is created.");
+                }
+                else if (dbContext.Database.GetPendingMigrations().Any())
+                {
+                    Log.Information("Migrating Database...");
+                    dbContext.Database.Migrate();
+                    Log.Information("Database is migrated.");
+                }
+                else
+                {
+                    Log.Information("Database already exists and is up-to-date.");
+                }
             }
-            else if (dbContext.Database.GetPendingMigrations().Any())
+            catch (Exception ex) 
             {
-                Console.WriteLine("Migrating Database...");
-                dbContext.Database.Migrate();
-                Console.WriteLine("Database is Migrated.");
-            }
-            else
-            {
-                Console.WriteLine("Database already exists and is up-to-date.");
+                Log.Fatal(ex, "Database creation or migration failed.");
+                throw;
             }
         }
 
