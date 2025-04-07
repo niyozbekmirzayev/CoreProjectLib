@@ -19,6 +19,7 @@ namespace CoreProjectLib.Data.Repositories
 
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         Task<TEntity> AddAsync(TEntity entity);
+        TEntity Add(TEntity entity);
 
         void Remove(TEntity entity);
         void RemoveRange(IEnumerable<TEntity> entities);
@@ -27,5 +28,6 @@ namespace CoreProjectLib.Data.Repositories
         void UpdateRange(IEnumerable<TEntity> entities);
 
         Task<int> SaveChangesAsync();
+        int SaveChanges();
     }
 }

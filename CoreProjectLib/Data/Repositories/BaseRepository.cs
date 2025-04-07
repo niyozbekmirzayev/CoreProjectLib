@@ -41,6 +41,18 @@ namespace CoreProjectLib.Data.Repositories
 
         }
 
+        public virtual TEntity Add(TEntity entity)
+        {
+            if (entity == null)
+            {
+                throw new Exception("Null value can not be added");
+            }
+
+            var entry = DbContext.Add(entity);
+
+            return entry.Entity;
+        }
+
         public virtual async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
             if (entities == null || !entities.Any())
@@ -132,6 +144,11 @@ namespace CoreProjectLib.Data.Repositories
         public virtual async Task<int> SaveChangesAsync()
         {
             return await DbContext.SaveChangesAsync();
+        }
+
+        public virtual int SaveChanges()
+        {
+            return DbContext.SaveChanges();
         }
 
         public virtual void Dispose()
